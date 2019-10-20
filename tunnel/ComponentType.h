@@ -1,0 +1,1 @@
+enum class ComponentType { ACCESS_POINT, CONNECTOR };

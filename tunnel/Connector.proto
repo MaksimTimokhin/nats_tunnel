@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option cc_generic_services = true;
+
+message TunnelRequest {
+    string data_subject = 1;
+    string connection_id = 2;
+    string target_host = 3;
+    int32 target_port = 4;
+}
+
+message TunnelResponse {
+    bool success = 1;
+}
+
+service ConnectorService {
+    rpc BuildTunnel (TunnelRequest) returns (TunnelResponse) {}
+}

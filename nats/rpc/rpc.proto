@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package nats;
+
+message RpcRequest {
+    string service = 1;
+    string method = 2;
+    bytes serialized_request = 3;
+}
+
+message RpcError {
+    string message = 1;
+}
+
+message RpcResponse {
+    RpcError rpc_error = 1;
+    bytes serialized_response = 2;
+}
